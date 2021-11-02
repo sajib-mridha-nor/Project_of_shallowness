@@ -16,6 +16,8 @@ class Ab14Cls14 extends StatefulWidget {
 class _Ab14Cls14State extends State<Ab14Cls14> {
   var v;
   bool istrue = false;
+  
+  var clr = Colors.cyan;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
             iconEnabledColor: Colors.amber,
             iconDisabledColor: Colors.red,
             // itemHeight: ,
-            style: TextStyle(fontSize: 30),
-            isExpanded: false,
+            style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+            isExpanded: true,
 
             elevation: 34,
             focusColor: Colors.amberAccent,
@@ -40,25 +42,27 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
             onChanged: (ValueKey) {
               setState(() {
                 v = ValueKey;
+                istrue = true;
               });
               if (v == 2) {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => FoodDemo()));
               }
             },
+
             // onTap: () {
             //   if (v == 2) {
-            //     Navigator.push(
-            //         context, MaterialPageRoute(builder: (context) => FoodDemo()));
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => FoodDemo()));
             //   } else if (v == 3) {
-            //     Navigator.push(
-            //         context, MaterialPageRoute(builder: (context) => Class15()));
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => Class15()));
             //   } else if (v == 4) {
-            //     Navigator.push(
-            //         context, MaterialPageRoute(builder: (context) => Class15()));
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => Class15()));
             //   } else if (v == 1) {
-            //     Navigator.push(
-            //         context, MaterialPageRoute(builder: (context) => Class15()));
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => Class15()));
             //   }
             // },
             value: v,
@@ -67,14 +71,10 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
                 child: Text("This is 1st Item"),
                 value: 1,
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FoodDemo()));
-
-                  var snk = SnackBar(
-                    content: Text("There are food seleted option"),
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("There are some foods"),
                     backgroundColor: Colors.red,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snk);
+                  ));
                 },
               ),
               DropdownMenuItem(
@@ -94,29 +94,54 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
           Row(
             children: [
               Checkbox(
-                  value: istrue,
-                  onChanged: (ValueKey) {
-                    setState(() {
-                      istrue = ValueKey!;
-                    });
-                  }),
-              Text("Remember me")
+                autofocus: true,
+                focusColor: Colors.green,
+                activeColor: Colors.brown,
+                shape: CircleBorder(),
+                splashRadius: 10,
+                checkColor: Colors.red,
+                fillColor: MaterialStateProperty.all(Colors.yellow),
+                value: istrue,
+                onChanged: (ValueKey) {
+                  setState(() {
+                    istrue = ValueKey!;
+                  });
+                },
+              ),
+              Text("Remember me!")
             ],
           ),
           CheckboxListTile(
-              subtitle: Text("subtitle"),
-              selected: true,
-              // shape: ShapeBorder(),
-              checkColor: Colors.amber,
-              secondary: Text("this is checkbox"),
-              title: Text("This is your condition"),
-              isThreeLine: true,
-              value: istrue,
-              onChanged: (ValueKey) {
-                setState(() {
-                  istrue = ValueKey!;
-                });
-              })
+            autofocus: true,
+
+            activeColor: Colors.brown,
+            contentPadding: EdgeInsets.all(35),
+            value: istrue,
+            // selected: true,
+            dense: istrue,
+            selectedTileColor: Colors.amber,
+            isThreeLine: true,
+            onChanged: (T) {
+              setState(() {
+                istrue = T!;
+                if (istrue == true) {
+                  clr = Colors.yellow;
+                } else {
+                  clr = Colors.cyan;
+                }
+              });
+            },
+            secondary: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRji2iGfaRDW-HRGPhYle2QW_Zb4azerrDKYA&usqp=CAU")),
+            title: Text("This CheckBox"),
+            subtitle: Text("Choose your option"),
+
+            tileColor: clr,
+            tristate: false,
+          )
+
+          
         ],
       ),
     );
