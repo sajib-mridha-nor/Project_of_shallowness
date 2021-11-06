@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'dart:ui';
 
+import 'package:firstapp/ab15cl25.dart';
 import 'package:firstapp/class15.dart';
 import 'package:firstapp/food.dart';
 import 'package:firstapp/home3.dart';
@@ -16,8 +18,13 @@ class Ab14Cls14 extends StatefulWidget {
 class _Ab14Cls14State extends State<Ab14Cls14> {
   var v;
   bool istrue = false;
-  
+  var c = 1;
   var clr = Colors.cyan;
+  var groupValue;
+  var radioValue = false;
+  var cntClr = Colors.teal;
+
+  var radioGroup;
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +120,6 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
           ),
           CheckboxListTile(
             autofocus: true,
-
             activeColor: Colors.brown,
             contentPadding: EdgeInsets.all(35),
             value: istrue,
@@ -139,9 +145,36 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
 
             tileColor: clr,
             tristate: false,
-          )
+          ),
 
-          
+         
+
+          // Row(
+          //   children: [
+          //     Checkbox(
+          //         value: istrue,
+          //         onChanged: (ValueKey) {
+          //           setState(() {
+          //             istrue = ValueKey!;
+          //           });
+          //         }),
+          //     Text("Remember me")
+          //   ],
+          // ),
+          // CheckboxListTile(
+          //     subtitle: Text("subtitle"),
+          //     selected: true,
+          //     // shape: ShapeBorder(),
+          //     checkColor: Colors.amber,
+          //     secondary: Text("this is checkbox"),
+          //     title: Text("This is your condition"),
+          //     isThreeLine: true,
+          //     value: istrue,
+          //     onChanged: (ValueKey) {
+          //       setState(() {
+          //         istrue = ValueKey!;
+          //       });
+          //     }),
         ],
       ),
     );
