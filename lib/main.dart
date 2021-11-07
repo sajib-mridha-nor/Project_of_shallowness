@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:firstapp/ab14Class24.dart';
 import 'package:firstapp/ab14cl25.dart';
+import 'package:firstapp/ab15cls26.dart';
 import 'package:firstapp/food.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ import './home2.dart';
 import './class16.dart';
 
 main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Checkox()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: AB15Class26()));
 }
 
 class newbatch extends StatelessWidget {

@@ -146,8 +146,154 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
             tileColor: clr,
             tristate: false,
           ),
+          Radio(
+              splashRadius: 33,
+              focusColor: Colors.green,
+              overlayColor: MaterialStateProperty.all(Colors.pink),
+              activeColor: Colors.yellow,
+              fillColor: MaterialStateProperty.all(Colors.purple),
+              value: 1,
+              groupValue: radioGroup,
+              onChanged: (T) {
+                setState(() {
+                  radioGroup = T!;
+                });
+              }),
+          Radio(
+              value: 1,
+              groupValue: groupValue,
+              onChanged: (T) {
+                setState(() {
+                  groupValue = T;
+                });
+              }),
+          Radio(
+              value: 3,
+              groupValue: radioGroup,
+              onChanged: (T) {
+                setState(() {
+                  radioGroup = T;
+                });
+              }),
+          Radio(
+              value: 4,
+              groupValue: radioGroup,
+              onChanged: (T) {
+                setState(() {
+                  radioGroup = T;
+                });
+              }),
 
-         
+          Container(
+            color: cntClr,
+            margin: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Text(
+                    "Chose your Color....?",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Radio(
+                        activeColor: Colors.amber,
+                        toggleable: true,
+                        fillColor: MaterialStateProperty.all(Colors.red),
+                        autofocus: true,
+                        focusColor: Colors.green,
+                        splashRadius: 30,
+                        value: 1,
+                        groupValue: groupValue,
+                        onChanged: (T) {
+                          setState(() {
+                            groupValue = T!;
+
+                            if (groupValue == 1) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Showclass(
+                                          Colors.red, "I'm comming from Red")));
+                            }
+                          });
+                        }),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Text("Red"),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Radio(
+                        activeColor: Colors.amber,
+                        toggleable: true,
+                        fillColor: MaterialStateProperty.all(Colors.red),
+                        autofocus: true,
+                        focusColor: Colors.green,
+                        splashRadius: 30,
+                        value: 2,
+                        groupValue: groupValue,
+                        onChanged: (T) {
+                          setState(() {
+                            groupValue = T!;
+                            print(groupValue);
+                            if (groupValue == 2) {
+                              cntClr = Colors.green;
+                              print(groupValue);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Showclass(
+                                          Colors.green,
+                                          "I'm comming from Green")));
+                            }
+                          });
+                        }),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Text("Green"),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Radio(
+                        activeColor: Colors.amber,
+                        toggleable: true,
+                        // fillColor: MaterialStateProperty.all(Colors.red),
+                        // autofocus: true,
+                        focusColor: Colors.green,
+                        splashRadius: 30,
+                        value: 3,
+                        groupValue: groupValue,
+                        onChanged: (T) {
+                          setState(() {
+                            groupValue = T!;
+                            print(groupValue);
+                            if (groupValue == 3) {
+                              cntClr = Colors.blue;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Showclass(
+                                          Colors.blue,
+                                          "I'm comming from Blue")));
+                            }
+                          });
+                        }),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Text("Blue"),
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
 
           // Row(
           //   children: [
