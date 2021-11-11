@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   font_awesome_flutter: ^9.2.0
+  
  
   
   
@@ -63,6 +64,10 @@ flutter:
    - images/index2.jpg
    - images/chair1.jpg
    - images/chair2.jpg
+   - images/1.jpg
+   - images/2.jpg
+   - images/4.jpg
+   - images/5.jpg
 
 
    
