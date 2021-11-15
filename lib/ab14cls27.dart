@@ -10,29 +10,243 @@ class Ab14Class27 extends StatefulWidget {
 
 class _Ab14Class27State extends State<Ab14Class27> {
   var icn = FontAwesomeIcons.heart;
+  var icn2 = FontAwesomeIcons.heart;
   var r = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-          child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            Myitem(
-              "https://sc04.alicdn.com/kf/HTB1uOksOlLoK1RjSZFuq6xn0XXav.jpg",
-              "Realistic transparent bottle with pump for foundation cream",
-              "৳ 10,756",
-            ),
-            Myitem(
-                "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
-                "Campus Shoes Sports Shoes Online Sale",
-                "৳ 3,756"),
-               
-          ],
+      body: SingleChildScrollView(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Myitem(
+                      "https://sc04.alicdn.com/kf/HTB1uOksOlLoK1RjSZFuq6xn0XXav.jpg",
+                      "Realistic transparent bottle with pump for foundation cream",
+                      "৳ 10,756", () {
+                    if (icn == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                ],
+              ),
+              Row(
+                children: [
+                  Myitem(
+                      "https://sc04.alicdn.com/kf/HTB1uOksOlLoK1RjSZFuq6xn0XXav.jpg",
+                      "Realistic transparent bottle with pump for foundation cream",
+                      "৳ 10,756", () {
+                    if (icn == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                ],
+              ),
+              Row(
+                children: [
+                  Myitem(
+                      "https://sc04.alicdn.com/kf/HTB1uOksOlLoK1RjSZFuq6xn0XXav.jpg",
+                      "Realistic transparent bottle with pump for foundation cream",
+                      "৳ 10,756", () {
+                    if (icn == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                  Myitem(
+                      "https://assets.ajio.com/medias/sys_master/root/h5a/h59/13018715881502/-1117Wx1400H-460342492-blue-MODEL.jpg",
+                      "Campus Shoes Sports Shoes Online Sale",
+                      "৳ 3,756", () {
+                    if (icn2 == FontAwesomeIcons.heart) {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.solidHeart;
+                      });
+                    } else {
+                      setState(() {
+                        icn2 = FontAwesomeIcons.heart;
+                      });
+                    }
+                  }, icn2),
+                ],
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
@@ -40,15 +254,14 @@ class _Ab14Class27State extends State<Ab14Class27> {
 class Myitem extends StatelessWidget {
   var img;
   var title, price;
+  var onpress;
+  var icn;
 
-  Myitem(
-    var img,
-    var title,
-    var price,
-  ) {
+  Myitem(var img, var title, var price, var opress, this.icn) {
     this.img = img;
     this.title = title;
     this.price = price;
+    this.onpress = opress;
   }
 
   @override
@@ -98,7 +311,7 @@ class Myitem extends StatelessWidget {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(
-                        FontAwesomeIcons.heart,
+                        icn,
                         color: Colors.red,
                       ))
                 ],

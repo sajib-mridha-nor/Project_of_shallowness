@@ -1,19 +1,29 @@
+// import 'package:flutter/material.dart';
 import 'package:firstapp/ab14cls26.dart';
 import 'package:firstapp/ab14cls27.dart';
 import 'package:firstapp/ab15cls28.dart';
 import 'package:firstapp/ab16cls28.dart';
 import 'package:firstapp/day5.dart';
 import 'package:firstapp/secondclass.dart';
-import 'package:flutter/material.dart';
-
 import 'ab15cls26.dart';
+import './ab14cls26.dart';
+import './ab16cls29.dart';
 
-class MyApp extends StatelessWidget {
+import 'package:flutter/material.dart';
+import './myapp3.dart';
+
+void main(List<String> args) {
+  runApp(MaterialApp(home: Myapp3()));
+}
+
+class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Text("New class"),
+      body: Center(
+        child: Text("Class 1"),
+      ),
     );
   }
 }
@@ -23,10 +33,9 @@ class Myapp2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyApp());
+    return Scaffold(
+      appBar: AppBar(),
+      body: Text("Class 2"),
+    );
   }
-}
-
-void main(List<String> args) {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Day28()));
 }

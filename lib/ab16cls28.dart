@@ -14,6 +14,7 @@ class Day28 extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+               
                   decoration: BoxDecoration(
                       color: Colors.black26,
                       borderRadius: BorderRadius.circular(15)),
@@ -116,6 +117,51 @@ class Day28 extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Day28b extends StatelessWidget {
+  const Day28b({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(15)),
+              // height: double.maxFinite,
+              width: double.infinity,
+              child: FlutterLogo(),
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(15)),
+              // height: double.maxFinite,
+              width: double.infinity,
+              child: FlutterLogo(),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(15)),
+              // height: double.maxFinite,
+              width: double.infinity,
+              child: FlutterLogo(),
+            ),
+          ),
+        ],
+      )),
     );
   }
 }

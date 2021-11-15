@@ -10,10 +10,11 @@ class Ab15day28 extends StatefulWidget {
 class _Ab15day28State extends State<Ab15day28> {
   var myicon = FontAwesomeIcons.heart;
   bool istrue = false;
+  var clr = Colors.green;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
+      backgroundColor: clr,
       appBar: AppBar(),
       body: Center(
         child: Row(
@@ -27,11 +28,38 @@ class _Ab15day28State extends State<Ab15day28> {
                 "Natural Beige face makeup foundation cream",
                 "৳ 1,507",
                 myicon),
-            Mybutton(() {}, "hi")
+            Mybutton(() {}, "hi"),
+            MyclrButtton(() {
+              setState(() {
+                clr = Colors.purple;
+              });
+            }, "purple"),
+            MyclrButtton((){
+              setState(() {
+                clr = Colors.brown;
+              });
+
+
+            }, "")
           ],
         ),
       ),
     );
+  }
+}
+
+class MyclrButtton extends StatelessWidget {
+  var onpress;
+  var text;
+  MyclrButtton(this.onpress, this.text);
+
+  // MyclrButtton(var onpress) {
+  //   this.onpress = onpress;
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: onpress, child: Text(text));
   }
 }
 
