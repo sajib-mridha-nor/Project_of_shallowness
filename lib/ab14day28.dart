@@ -127,7 +127,7 @@ class Day28ab14 extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(flex: 10, child: Container(color: Colors.amber)),
+          Expanded(flex: 2, child: Container(color: Colors.amber)),
           Expanded(
             flex: 15,
             child: Row(
@@ -153,7 +153,8 @@ class Day28ab14 extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(flex: 16, child: Container(color: Colors.black))
+          Expanded(flex: 4, child: Container(color: Colors.black)),
+          Expanded(flex: 2, child: Container(color: Colors.blue))
         ],
       ),
     );

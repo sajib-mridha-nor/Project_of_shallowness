@@ -52,8 +52,8 @@ class _Ab14Cls14State extends State<Ab14Cls14> {
                 istrue = true;
               });
               if (v == 2) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FoodDemo("")));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => FoodDemo("")));
               }
             },
 

@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  
   font_awesome_flutter: ^9.2.0
   
  
@@ -34,6 +35,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  new_gradient_app_bar: ^0.2.0
+  liquid_swipe: ^2.1.1
   
 
 dev_dependencies:

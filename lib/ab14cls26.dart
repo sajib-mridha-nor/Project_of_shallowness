@@ -16,15 +16,9 @@ class _RRdionState extends State<RRdion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      
-      ),
-     
-    
+      appBar: AppBar(),
       body: Column(
         children: [
-
-       
           Row(
             children: [
               Radio(
@@ -102,8 +96,8 @@ class _RRdionState extends State<RRdion> {
               } else if (istrue == 2) {
                 setState(() {
                   r = "two";
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => FoodDemo(istrue)));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (ctx) => FoodDemo(istrue)));
                 });
               } else if (istrue == 3) {
                 setState(() {

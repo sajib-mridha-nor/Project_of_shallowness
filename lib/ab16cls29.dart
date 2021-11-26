@@ -27,6 +27,7 @@ class _Ab16day29State extends State<Ab16day29> {
               child: Transform.rotate(
                 angle: roat,
                 child: Switch(
+                  
                   thumbColor: MaterialStateProperty.all(Colors.red),
                   activeTrackColor: Colors.yellow,
                   inactiveTrackColor: Colors.pink,
@@ -34,7 +35,7 @@ class _Ab16day29State extends State<Ab16day29> {
                   inactiveThumbColor: Colors.yellow,
                   value: isactive,
                   onChanged: (s) {
-                    setState(() {
+                     setState(() {
                       if (isactive == false) {
                         c = Colors.cyan;
                       } else {
@@ -48,20 +49,20 @@ class _Ab16day29State extends State<Ab16day29> {
 
                       isactive = s;
                     });
+                   
                   },
                 ),
               ),
             ),
             CupertinoSwitch(
+
+              
                 value: iosB,
                 onChanged: (s) {
                   setState(() {
                     iosB = s;
                   });
                 }),
-              
-
-               
           ],
         ),
       ),
