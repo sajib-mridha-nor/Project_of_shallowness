@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   new_gradient_app_bar: ^0.2.0
   liquid_swipe: ^2.1.1
+  curved_navigation_bar: ^1.0.1
   
 
 dev_dependencies:
