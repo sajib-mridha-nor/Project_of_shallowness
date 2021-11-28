@@ -1,4 +1,5 @@
 // import 'package:flutter/material.dart';
+import 'package:firstapp/Artboard2.dart';
 import 'package:firstapp/ab13day7.dart';
 import 'package:firstapp/ab14Day30.dart';
 import 'package:firstapp/ab14cls26.dart';
@@ -28,7 +29,7 @@ import 'ab16day30.dart';
 import 'ab14day29.dart';
 
 void main(List<String> args) {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Ab14D33()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Ab13D35()));
 }
 
 class Myapp extends StatelessWidget {
@@ -190,5 +191,123 @@ class Day29AB14 extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class Ab13D35 extends StatelessWidget {
+  var img = [
+    "https://bsmedia.business-standard.com/media-handler.php?mediaPath=https://bsmedia.business-standard.com/_media/bs/img/article/2020-09/02/full/1599016191-3544.jpg&width=1200",
+    "https://s01.sgp1.cdn.digitaloceanspaces.com/article/160796-pwqcbcdvmy-1624706598.jpg",
+    "https://images.indianexpress.com/2021/03/eye-cover-1200.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8K0hMUa74vCaQ7DiEUbl9NHdEC4Utn-TwlQ&usqp=CAU",
+    "https://vivoclinic.com/wp-content/uploads/2021/04/Bangladesh.jpg",
+    "https://bsmedia.business-standard.com/media-handler.php?mediaPath=https://bsmedia.business-standard.com/_media/bs/img/article/2020-09/02/full/1599016191-3544.jpg&width=1200",
+    "https://s01.sgp1.cdn.digitaloceanspaces.com/article/160796-pwqcbcdvmy-1624706598.jpg",
+    "https://images.indianexpress.com/2021/03/eye-cover-1200.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8K0hMUa74vCaQ7DiEUbl9NHdEC4Utn-TwlQ&usqp=CAU",
+    "https://vivoclinic.com/wp-content/uploads/2021/04/Bangladesh.jpg",
+    "https://bsmedia.business-standard.com/media-handler.php?mediaPath=https://bsmedia.business-standard.com/_media/bs/img/article/2020-09/02/full/1599016191-3544.jpg&width=1200",
+    "https://s01.sgp1.cdn.digitaloceanspaces.com/article/160796-pwqcbcdvmy-1624706598.jpg",
+    "https://images.indianexpress.com/2021/03/eye-cover-1200.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8K0hMUa74vCaQ7DiEUbl9NHdEC4Utn-TwlQ&usqp=CAU",
+    "https://vivoclinic.com/wp-content/uploads/2021/04/Bangladesh.jpg"
+  ];
+  var title = [
+    "Bangladesh",
+    "Chittagong",
+    "Dhaka",
+    "Rajshahi",
+    "Khulna",
+    "Bangladesh",
+    "Chittagong",
+    "Dhaka",
+    "Rajshahi",
+    "Khulna",
+    "Bangladesh",
+    "Chittagong",
+    "Dhaka",
+    "Rajshahi",
+    "Khulna"
+  ];
+  var clr = [
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.cyan,
+    Colors.blue[200],
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.cyan,
+    Colors.blue[200],
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.cyan,
+    Colors.blue[200]
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(),
+        body: ListView.separated(
+            itemBuilder: (context, index) => ListTile(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  onTap: () {
+                    print(index);
+                  },
+                  onLongPress: () {
+                    print("from long press $index");
+                  },
+                  tileColor: clr[index],
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(img[index]),
+                  ),
+                  title: Text(
+                    title[index],
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.ac_unit),
+                    onPressed: () {
+                      print("object");
+                    },
+                  ),
+                ),
+            separatorBuilder: (context, index) => Container(
+                  color: Colors.red,
+                  height: 4,
+                ),
+            itemCount: title.length)
+
+        //  ListView.builder(
+        //   itemCount: img.length,
+        //   itemBuilder: (context, index) =>
+        // ListTile(
+        //     shape:
+        //         RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        //     onTap: () {
+        //       print(index);
+        //     },
+        //     onLongPress: () {
+        //       print("from long press $index");
+        //     },
+        //     tileColor: clr[index],
+        //     leading: CircleAvatar(
+        //       backgroundImage: NetworkImage(img[index]),
+        //     ),
+        //     title: Text(
+        //       title[index],
+        //     ),
+        //     trailing: IconButton(
+        //       icon: Icon(Icons.ac_unit),
+        //       onPressed: () {
+        //         print("object");
+        //       },
+        //     ),
+        //   ),
+        // ),
+        );
   }
 }

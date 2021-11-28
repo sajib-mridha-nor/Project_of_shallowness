@@ -24,25 +24,25 @@ class _Ab14D33State extends State<Ab14D33> {
     return Scaffold(
         extendBody: true,
         appBar: AppBar(),
-        body:
+        body:pages[index],
         
 
-        Column(
-          children: [
-            Container(
-              child: Text("$index"),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.lime,
-                child: Image.network(
-                  "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/snowy-landscape-royalty-free-image-621983566-1542812946.jpg",
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
-        ),
+        // Column(
+        //   children: [
+        //     Container(
+        //       child: Text("$index"),
+        //     ),
+        //     Expanded(
+        //       child: Container(
+        //         color: Colors.lime,
+        //         child: Image.network(
+        //           "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/snowy-landscape-royalty-free-image-621983566-1542812946.jpg",
+        //           fit: BoxFit.cover,
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         bottomNavigationBar: CurvedNavigationBar(
           onTap: (i) {
             setState(() {
