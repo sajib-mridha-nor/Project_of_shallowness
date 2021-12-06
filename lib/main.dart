@@ -1,5 +1,9 @@
 // import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// import 'dart:js';
 import 'package:firstapp/Artboard2.dart';
+import 'package:firstapp/ab13d237.dart';
+import 'package:firstapp/ab13d37.dart';
 import 'package:firstapp/ab13day7.dart';
 import 'package:firstapp/ab14Day30.dart';
 import 'package:firstapp/ab14cls26.dart';
@@ -15,6 +19,7 @@ import 'package:firstapp/ab16cls28.dart';
 import 'package:firstapp/ab16day32.dart';
 import 'package:firstapp/class35.dart';
 import 'package:firstapp/day5.dart';
+import 'package:firstapp/longpress.dart';
 import 'package:firstapp/secondclass.dart';
 import 'package:firstapp/t.dart';
 import 'package:firstapp/ui.dart';
@@ -30,92 +35,147 @@ import './ab14day28.dart';
 import 'ab16d31.dart';
 import 'ab16day30.dart';
 import 'ab14day29.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main(List<String> args) {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: UIdemo()));
+main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Myapp()));
 }
 
-class Myapp extends StatelessWidget {
+class Firebaseop extends StatelessWidget {
+  const Firebaseop({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Column(),
       appBar: AppBar(),
-      body: Center(
-          child: Card(
-        elevation: 30,
-        shadowColor: Colors.red,
-        color: Colors.cyan,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25), bottomRight: Radius.circular(25)),
-            side: BorderSide.none),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
-          child: Container(
-            height: 150,
-            width: 350,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    // Container(
-                    //     height: 40,
-                    //     width: 40,
-                    //     child: Image.asset(
-                    //       "images/2.jpg",
-                    //       fit: BoxFit.cover,
-                    //     )),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text(
-                      "Name : Rakibul Islam ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 80)),
-                    Container(
-                        height: 40,
-                        width: 40,
-                        child: Image.asset(
-                          "images/2.jpg",
-                          fit: BoxFit.cover,
-                        )),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.location_city),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text("Address : Ceragi pahar,Chittagong"),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.phone),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text("Phone : Rakibul Islam "),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.email),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text("Email : sonarbangla@gmail.com"),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.facebook),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Text("Email : facebook.com/sonarbangla"),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      )),
     );
+  }
+}
+
+class Myapp extends StatelessWidget {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+ Stream<QuerySnapshot> _stream = FirebaseFirestore.instance.collection('users').snapshots();
+
+  String name = "";
+
+  String age = "";
+  String gender = "";
+  _adduser() {
+    return users.add(
+      {"name": name, "age": age, "gender": gender},
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(),
+        body: Center(
+            child: Card(
+                elevation: 30,
+                shadowColor: Colors.red,
+                color: Colors.cyan,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25),
+                        bottomRight: Radius.circular(25)),
+                    side: BorderSide.none),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 20, bottom: 20, left: 10, right: 10),
+                  child: Container(
+                      height: 150,
+                      width: 350,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ElevatedButton(
+                              onPressed: _adduser, child: Text("data")),
+                          Row(
+                            children: [
+                              // Container(
+                              //     height: 40,
+                              //     width: 40,
+                              //     child: Image.asset(
+                              //       "images/2.jpg",
+                              //       fit: BoxFit.cover,
+                              //     )),
+                              Padding(padding: EdgeInsets.all(7)),
+                              Text(
+                                "Name : Rakibul Islam ",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 80)),
+                              Container(
+                                  height: 40,
+                                  width: 40,
+                                  child: Image.asset(
+                                    "images/2.jpg",
+                                    fit: BoxFit.cover,
+                                  )),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.location_city),
+                              Padding(padding: EdgeInsets.all(7)),
+                              Text("Address : Ceragi pahar,Chittagong"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.phone),
+                              Padding(padding: EdgeInsets.all(7)),
+                              Text("Phone : Rakibul Islam "),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.email),
+                              Padding(padding: EdgeInsets.all(7)),
+                              Text("Email : sonarbangla@gmail.com"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.facebook),
+                              Padding(padding: EdgeInsets.all(7)),
+                              Text("Email : facebook.com/sonarbangla"),
+                            ],
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                _adduser();
+                              },
+                              child: Text("Add Data")),
+                          StreamBuilder<QuerySnapshot>(
+                              stream: _stream,
+                              builder: (BuildContext context,
+                                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                                if (snapshot.hasError) {
+                                  return Text("Data is not found");
+                                }
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return CircularProgressIndicator();
+                                }
+                                return ListView.builder(
+                                  // itemCount: snapshot.data.doc().length,
+                                    itemBuilder: (context, index) {
+                                  return Text("");
+                                });
+                              })
+                        ],
+                      )),
+                ))));
   }
 }
 
